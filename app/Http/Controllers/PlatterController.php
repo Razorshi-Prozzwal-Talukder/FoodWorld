@@ -13,6 +13,8 @@ class PlatterController extends Controller
     //To go Add Platter page
     public function addplatter()
 	{
+     $this->AdminAuthCheck2();
+
        return view('manager.addplatter');
 	}
 
@@ -21,12 +23,12 @@ class PlatterController extends Controller
 	{
         $data=array();
 
-    	$data['platter_name']=$request->platter_name;
-    	
-    	$data['platter_item']=$request->platter_item; 
+    	$data['platter_name']=$request->platter_name;    	
+    	$data['platter_description']=$request->platter_description;
     	$data['platter_price']=$request->platter_price; 
     	$data['platter_starting']=$request->platter_starting; 
-    	$data['platter_finishing']=$request->platter_finishing;   	
+    	$data['platter_deadline']=$request->platter_deadline;
+      $data['manager_id']=$request->manager_id;    	
 
     	$image=$request->file('platter_image');
 
@@ -59,8 +61,13 @@ class PlatterController extends Controller
     //To Show All Platter in the table
     public function allplatter()
     {
+       $this->AdminAuthCheck2();
+
+        $manager_id= Session::get('manager_id');
         $allplatter_info=DB::table('platter_tbl')
-        ->get();//if want show one row then use first() function
+                        ->select('platter_tbl.*')
+                        ->where('platter_tbl.manager_id','=', $manager_id)
+                        ->get();//if want show one row then use first() function
                 //or for show all database row, then use get() function
         $manage_platter=view('manager.allplatter')
         ->with('allplatter_info', $allplatter_info);
@@ -72,12 +79,13 @@ class PlatterController extends Controller
 
     //Platter Description view mathod
     public function platter_view($platter_id)
-    {
+    {       
+
       $platter_description_view=DB::table('platter_tbl')
-        ->select('*')
-        ->where('platter_id', $platter_id)
-        ->first();//if want show one row then use first() function
-                //or for show all database row, then use get() function
+                              ->select('*')
+                              ->where('platter_id', $platter_id)
+                              ->first();//if want show one row then use first() function
+                                      //or for show all database row, then use get() function
         $manage_description_platter=view('manager.platterview')
         ->with('platter_description_profile', $platter_description_view);
 
@@ -108,9 +116,9 @@ class PlatterController extends Controller
 
       $data['platter_name']=$request->platter_name;
       $data['platter_price']=$request->platter_price;  
-      $data['platter_item']=$request->platter_item;
+      $data['platter_description']=$request->platter_description;
       $data['platter_starting']=$request->platter_starting;  
-      $data['platter_finishing']=$request->platter_finishing;
+      $data['platter_deadline']=$request->platter_deadline;
          
    
       DB::table('platter_tbl')
@@ -131,4 +139,19 @@ class PlatterController extends Controller
       return Redirect::to('/allplatter');
 
      } 
+
+
+
+
+
+     ///Auth Function
+    public function AdminAuthCheck2()
+    {
+        $manager_id=Session::get('manager_id');
+        if ($manager_id) {
+            return;
+        }else{
+            return Redirect::to('/login_manager')->send();
+        }
+    }
 }

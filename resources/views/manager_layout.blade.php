@@ -162,10 +162,34 @@
                   <span class="badge badge-success">&nbsp;</span>
                 </div> --}}
                 <div class="sender">
-                  <p class="Sende-name">Setting</p>
+                  <p class="Sende-name">Edit_Profile</p>
                   {{-- <p class="Sender-message">Can we schedule a call this afternoon?</p> --}}
                 </div>
               </a>
+
+
+
+
+
+              <a class="dropdown-item" href="{{ URL::to('/manager_restaurent') }}">
+                {{-- <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-success">&nbsp;</span>
+                </div> --}}
+                <div class="sender">
+                  <p class="Sende-name">Restaurent_Condition</p>
+                  {{-- <p class="Sender-message">Can we schedule a call this afternoon?</p> --}}
+                </div>
+              </a>
+
+
+
+
+
+
+
+
+
               <a class="dropdown-item" href="{{ URL('/manager_logout') }}">
                 {{-- <div class="sender-img">
                   <img src="http://via.placeholder.com/47x47" alt="">
@@ -204,18 +228,7 @@
             <li class="nav-item nav-category">
               <span class="nav-link">Main Menu</span>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ URL::to('/allitem') }}">
-                <i class="mdi mdi-gauge menu-icon"></i>
-                <span class="menu-title">All Item</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ URL::to('/allplatter') }}">
-                <i class="mdi mdi-gauge menu-icon"></i>
-                <span class="menu-title">All Platter</span>
-              </a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="{{ URL::to('/additem') }}">
                 <i class="mdi mdi-puzzle menu-icon"></i>
@@ -223,6 +236,14 @@
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ URL::to('/allitem') }}">
+                <i class="mdi mdi-gauge menu-icon"></i>
+                <span class="menu-title">All Item</span>
+              </a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="{{ URL::to('/addplatter') }}">
                 <i class="mdi mdi-puzzle menu-icon"></i>
@@ -230,6 +251,16 @@
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ URL::to('/allplatter') }}">
+                <i class="mdi mdi-gauge menu-icon"></i>
+                <span class="menu-title">All Platter</span>
+              </a>
+            </li>
+            
+            
+            
             <li class="nav-item">
               <a class="nav-link" href="{{ URL::to('/offer') }}">
                 <i class="mdi mdi-puzzle menu-icon"></i>
@@ -244,7 +275,16 @@
         <div class="content-wrapper">
           <div class="row">
             @yield('content')
-          </div>          
+          </div> 
+
+
+
+
+
+
+
+
+                   
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->

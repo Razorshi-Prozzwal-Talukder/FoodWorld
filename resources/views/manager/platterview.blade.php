@@ -26,7 +26,7 @@
                   <div class="info-links">
                     <a class="website">
                       <i class="icon-globe icon">Including Item:</i>
-                      <span>{{ strtoupper($platter_description_profile->platter_item) }}</span>
+                      <span>{{ strtoupper($platter_description_profile->platter_description) }}</span>
                     </a>
                     
                     <a class="website">
@@ -35,24 +35,9 @@
                     </a>
                     <a class="website">
                       <i class="icon-globe icon">Platter Finishing Time:</i>
-                      <span>{{ strtoupper($platter_description_profile->platter_finishing) }}</span>
+                      <span>{{ strtoupper($platter_description_profile->platter_deadline) }}</span>
                     </a>
-                     {{-- <a class="website">
-                      <i class="icon-globe icon">Restaurent Name:</i>
-                      <span>{{ strtoupper($manager_description_profile->manager_restaurent_name) }}</span>
-                    </a>
-                     <a class="website">
-                      <i class="icon-globe icon">Restaurent Address:</i>
-                      <span>{{ strtoupper($manager_description_profile->manager_restaurent_address) }}</span>
-                    </a>
-                     <a class="website">
-                      <i class="icon-globe icon">Restaurent Opening Time:</i>
-                      <span>{{ strtoupper($manager_description_profile->manager_open_time) }}</span>
-                    </a>
-                     <a class="website">
-                      <i class="icon-globe icon">Restaurent Closeing Time:</i>
-                      <span>{{ strtoupper($manager_description_profile->manager_close_time) }}</span>
-                    </a> --}}
+                     
                      
                   </div>
                 </div>

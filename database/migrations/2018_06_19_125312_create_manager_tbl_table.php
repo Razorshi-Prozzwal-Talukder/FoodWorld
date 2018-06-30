@@ -24,11 +24,9 @@ class CreateManagerTblTable extends Migration
             $table->string('manager_address');
             $table->string('manager_restaurent_name');
             $table->string('manager_restaurent_address');
+            $table->string('manager_restaurent_phone');
             $table->string('manager_image');
-            $table->string('manager_open_time');
-            $table->string('manager_close_time');
 
-            $table->timestamps();
         });
     }
 

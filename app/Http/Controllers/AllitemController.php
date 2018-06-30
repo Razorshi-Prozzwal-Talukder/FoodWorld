@@ -6,16 +6,22 @@ use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+//use Auth;
 Session_start();
 
 class AllitemController extends Controller
 {
    //To Show All item in the table
-   public function allitem()
-  	{
-        $allitem_info=DB::table('additem_tbl')
-        ->get();//if want show one row then use first() function
-                //or for show all database row, then use get() function
+    public function allitem()
+  	{ 
+       $this->AdminAuthCheck2();
+
+        $manager_id= Session::get('manager_id');
+        $allitem_info=DB::table('additem_tbl')                   
+                   ->select('additem_tbl.*')
+                   ->where('additem_tbl.manager_id','=', $manager_id)
+                   ->get();
+
         $manage_item=view('manager.allitem')
         ->with('allitem_info', $allitem_info);
 
@@ -28,6 +34,8 @@ class AllitemController extends Controller
     //Item information Edit mathod
     public function item_edit($item_id)
     {
+       $this->AdminAuthCheck2();
+
       $item_description_view=DB::table('additem_tbl')
         ->select('*')
         ->where('item_id', $item_id)
@@ -65,6 +73,23 @@ class AllitemController extends Controller
       return Redirect::to('/allitem');
 
      } 
+
+
+
+
+
+
+
+     ///Auth Function
+    public function AdminAuthCheck2()
+    {
+        $manager_id=Session::get('manager_id');
+        if ($manager_id) {
+            return;
+        }else{
+            return Redirect::to('/login_manager')->send();
+        }
+    }
 
 
   	

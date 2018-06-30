@@ -17,11 +17,13 @@ class CreatePlatterTblTable extends Migration
             $table->increments('platter_id');
             $table->string('platter_name');
             $table->string('platter_image');
-            $table->string('platter_item');
-            $table->string('platter_price');
+            $table->longText('platter_description');
+            $table->float ('platter_price');
             $table->string('platter_starting');
-            $table->string('platter_finishing');
-            $table->timestamps();
+            $table->string('platter_deadline');
+            $table->string('manager_id');
+            $table->float('platter_rating');
+
         });
     }
 

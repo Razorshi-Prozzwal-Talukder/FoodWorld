@@ -35,6 +35,7 @@ class AdminController extends Controller
     }
     public function admin_dashboard()
 	{
+        $this->AdminAuthCheck();
        return view('admin.admin_dashboard');
 	}
 
@@ -43,8 +44,10 @@ class AdminController extends Controller
     //Logout Section
     public function adminlogout()
     {
-       Session::put('admin_name',null);
-       Session::put('admin_id',null);
+       // Session::put('admin_name',null);
+       // Session::put('admin_id',null);
+
+        Session::flush();///By using Auth
 
        return Redirect::to('/');
     }
@@ -52,6 +55,7 @@ class AdminController extends Controller
     //View Profile Section
     public function admin_viewprofile()
     {
+         $this->AdminAuthCheck();
        return view('admin.view');
     }
 
@@ -59,6 +63,8 @@ class AdminController extends Controller
     //Setting Section
     public function admin_setting()
     {
+         $this->AdminAuthCheck();
+
         $admin_id= Session::get('admin_id');
 
         $admin_description_view=DB::table('admin_tbl')
@@ -94,5 +100,20 @@ class AdminController extends Controller
 
         Session::put('exception', 'Admin Profile Update Successfully!!');
         return Redirect::to('/admin_setting');
+    }
+
+
+
+
+
+    ///Auth Function
+    public function AdminAuthCheck()
+    {
+        $admin_id=Session::get('admin_id');
+        if ($admin_id) {
+            return;
+        }else{
+            return Redirect::to('/admin')->send();
+        }
     }
 }

@@ -5,7 +5,7 @@
 
 	  <div class="card">
 		 <div class="card-body">
-			              <h2 class="card-title">All Item table</h2>
+			              <h2 class="card-title">Restaurent table</h2>
 
 			              <p class="alert-success"><?php
 			                  $exception=Session::get('exception');
@@ -22,23 +22,25 @@
                   <table id="order-listing" class="table table-striped" style="width:100%;">
                     <thead>
                       <tr>
-                          <th>Item's Name</th>
-                          <th>Item's Price</th> 
-                          {{-- <th>Restaurent Name</th>                           --}}
+                      	  <th>Restaurent  ID</th> 
+                          <th>Restaurent Name</th>
+                          <th>Restaurent Phone</th>
+                         
                           <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       
-                      @foreach($allitem_info as $v_item)
-                      <tr>
-                          <td>{{$v_item->item_name}}</td>
-                          <td>{{$v_item->item_price}}</td> 
-                          {{-- <td>{{$v_item->manager_restuarent_name}}</td>                          --}}
+                      @foreach($restaurent_info as $v_restaurent)
+                      <tr>                         
+                          <td>{{$v_restaurent->restaurent_id}}</td>
+                           <td>{{$v_restaurent->restaurent_name}}</td>
+                          <td>{{$v_restaurent->restaurent_phone}}</td>  
+                         
                    
                           <td>                           
-                            <a href="{{ URL('/item_edit/'.$v_item->item_id) }}"><button class="btn btn-outline-warning">Edit</button></a>
-                            <a href="{{ URL::to('/item_delete/'.$v_item->item_id) }}" id="delete"><button class="btn btn-outline-danger">Delete</button></a>
+                            <a href="{{ URL('/restaurent_edit_manager/'.$v_restaurent->restaurent_id) }}"><button class="btn btn-outline-warning">Edit</button></a>
+                          
                           </td>
                       </tr>
                       @endforeach

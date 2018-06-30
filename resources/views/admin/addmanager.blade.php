@@ -68,9 +68,14 @@
                                   <label for="exampleInputEmail1">Restaurent's Address</label>
                                   <input type="text" class="form-control p-input" name="manager_restaurent_address" aria-describedby="emailHelp" placeholder="Enter Restaurent Address">
                               </div>
+
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">Restaurent's Phone</label>
+                                  <input type="text" class="form-control p-input" name="manager_restaurent_phone" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                              </div>
                              
                               <div class="form-group">
-                                  <label>Upload Image</label>
+                                  <label>Upload Owner's Image</label>
                                   <div class="row">
                                     <div class="col-12">
                                       <label for="exampleInputFile2" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Browse</label>
@@ -80,15 +85,7 @@
                                   </div>
                               </div>
 
-                              <div class="form-group">
-                                  <label for="exampleInputEmail1">Restaurent's Open Time</label>
-                                  <input type="text" class="form-control p-input" name="manager_open_time" aria-describedby="emailHelp" placeholder="Enter Restaurent Open Hour">
-                              </div>
-
-                              <div class="form-group">
-                                  <label for="exampleInputEmail1">Restaurent's Close Time</label>
-                                  <input type="text" class="form-control p-input" name="manager_close_time" aria-describedby="emailHelp" placeholder="Enter Restaurent Close Hour">
-                              </div>
+                              
                               <button type="submit" class="btn btn-success">Submit</button>
                           </form>
                       </div>

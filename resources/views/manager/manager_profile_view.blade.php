@@ -45,14 +45,14 @@
                       <i class="icon-globe icon">Restaurent Address:</i>
                       <span>{{ strtoupper($manager_profile->manager_restaurent_address) }}</span>
                     </a>
-                     <a class="website">
+                    {{--  <a class="website">
                       <i class="icon-globe icon">Restaurent Opening Time:</i>
                       <span>{{ strtoupper($manager_profile->manager_open_time) }}</span>
                     </a>
                      <a class="website">
                       <i class="icon-globe icon">Restaurent Closeing Time:</i>
                       <span>{{ strtoupper($manager_profile->manager_close_time) }}</span>
-                    </a>
+                    </a> --}}
                      
                   </div>
                 </div>

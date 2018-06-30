@@ -23,11 +23,11 @@ class CreateFormTblTable extends Migration
             $table->string('owner_address');
             $table->string('owner_restaurent_name');
             $table->string('owner_restaurent_address');
+            $table->string('owner_restaurent_phone');
             $table->string('owner_image');
             $table->string('owner_open_time');
             $table->string('owner_close_time');
 
-            $table->timestamps();
         });
     }
 

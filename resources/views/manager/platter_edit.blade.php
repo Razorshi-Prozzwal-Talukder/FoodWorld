@@ -35,10 +35,18 @@
                               </div>
 
 
-                              <div class="form-group">
+                              <div class="control-group hidden-phone">
+                                  <label class="control-label" for="textarea2">Platter's Description</label>
+                                  <div class="controls">
+                                  <textarea class="cleditor" name="platter_description"  value="{{($platter_description_profile->platter_description)}} rows="3"></textarea>
+                                  </div>
+                              </div>
+
+
+                              {{-- <div class="form-group">
       		                      <label for="ccomment">Platter's Item</label>
-      		                      <textarea id="ccomment" class="form-control" name="platter_item" value="{{($platter_description_profile->platter_item)}}"></textarea>
-		                      </div>
+      		                      <textarea id="ccomment" class="form-control" name="platter_description" value="{{($platter_description_profile->platter_description)}}"></textarea>
+		                          </div> --}}
 
 		                      <div class="form-group">
                                   <label for="exampleInputPassword1">Platter Starting From</label>
@@ -47,7 +55,7 @@
 
                               <div class="form-group">
                                   <label for="exampleInputPassword1">Platter End In</label>
-                                  <input type="date" class="form-control p-input" name="platter_finishing" value="{{($platter_description_profile->platter_finishing)}}">
+                                  <input type="date" class="form-control p-input" name="platter_deadline" value="{{($platter_description_profile->platter_deadline)}}">
                               </div>
 
                               

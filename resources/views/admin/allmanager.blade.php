@@ -23,8 +23,9 @@
                   <table id="order-listing" class="table table-striped" style="width:100%;">
                     <thead>
                       <tr>
+                          <th>Manager_id</th>
                           <th>Manager_name</th>
-                          <th>Manager_email</th>
+                          {{-- <th>Manager_email</th> --}}
                           <th>Manager_phone</th>
                           <th>Manager_image</th>
                           <th>Restaurent_name</th>
@@ -35,8 +36,9 @@
                     <tbody>
                       @foreach($all_manager_info as $v_manager)
                       <tr>
+                          <td>{{$v_manager->manager_id}}</td>
                           <td>{{$v_manager->manager_name}}</td>
-                          <td>{{$v_manager->manager_email}}</td>
+                          {{-- <td>{{$v_manager->manager_email}}</td> --}}
                           <td>{{$v_manager->manager_phone}}</td>
                           <td><img src="{{ URL::to($v_manager->manager_image) }}" height="80" width="100" style="border-radius: 50%;"></td>
                           <td>{{$v_manager->manager_restaurent_name}}</td>

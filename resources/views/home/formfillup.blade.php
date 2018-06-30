@@ -64,6 +64,11 @@
                                   <label for="exampleInputEmail1">Restaurent's Address</label>
                                   <input type="text" class="form-control p-input" name="owner_restaurent_address" aria-describedby="emailHelp" placeholder="Enter Restaurent Address">
                               </div>
+
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">Restaurent's Phone</label>
+                                  <input type="text" class="form-control p-input" name="owner_restaurent_phone" aria-describedby="emailHelp" placeholder="Enter Restaurent's Phone Number">
+                              </div>
                              
                               <div class="form-group">
                                   <label>Upload Image</label>

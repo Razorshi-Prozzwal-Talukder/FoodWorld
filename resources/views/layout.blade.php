@@ -133,10 +133,13 @@
         <ul class="navbar-nav ml-lg-auto">
           
           <li class="nav-item dropdown">
+            
             <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
               <i class="mdi mdi-account"></i>
-             
+             {{--  <p>{{Session::get('admin_name')}}</p>
+              --}}
             </a>
+
             <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
               
               <a class="dropdown-item" href="{{ URL::to('/admin_setting') }}">
@@ -197,6 +200,24 @@
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
               </a>
             </li>
+
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{{ URL('/addrestaurent') }}">
+                <i class="mdi mdi-puzzle menu-icon"></i>
+                <span class="menu-title">Add Restaurent</span>
+                <span class="badge badge-danger badge-pill ml-auto">New</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ URL('/allrestaurent') }}">
+                <i class="mdi mdi-gauge menu-icon"></i>
+                <span class="menu-title">All Restaurent</span>
+              </a>
+            </li>
+
+
              <li class="nav-item">
               <a class="nav-link" href="{{ URL('/request') }}">
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>

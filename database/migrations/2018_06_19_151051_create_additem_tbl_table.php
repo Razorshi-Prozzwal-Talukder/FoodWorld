@@ -17,7 +17,9 @@ class CreateAdditemTblTable extends Migration
             $table->increments('item_id');
             $table->string('item_name');
             $table->string('item_price');
-            
+            $table->string('manager_id');
+            $table->integer('item_rating');
+
         });
     }
 

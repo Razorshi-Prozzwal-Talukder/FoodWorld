@@ -54,12 +54,12 @@ class HomepageController extends Controller
         $data['owner_name']=$request->owner_name;
         $data['owner_father_name']=$request->owner_father_name;
         $data['owner_mother_name']=$request->owner_mother_name;
-        $data['owner_email']=$request->owner_email;
-       
+        $data['owner_email']=$request->owner_email;       
         $data['owner_phone']=$request->owner_phone;
         $data['owner_address']=$request->owner_address;
         $data['owner_restaurent_name']=$request->owner_restaurent_name;
         $data['owner_restaurent_address']=$request->owner_restaurent_address;
+        $data['owner_restaurent_phone']=$request->owner_restaurent_phone;
         $data['owner_open_time']=$request->owner_open_time;
         $data['owner_close_time']=$request->owner_close_time;
         $image=$request->file('owner_image');

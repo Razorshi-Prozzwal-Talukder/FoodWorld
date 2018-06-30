@@ -70,13 +70,8 @@
                               </div>
 
                               <div class="form-group">
-                                  <label for="exampleInputEmail1">Restaurent's Open Time</label>
-                                  <input type="text" class="form-control p-input" name="manager_open_time" value="{{($manager_description_profile->manager_open_time)}}">
-                              </div>
-
-                              <div class="form-group">
-                                  <label for="exampleInputEmail1">Restaurent's Close Time</label>
-                                  <input type="text" class="form-control p-input" name="manager_close_time" value="{{($manager_description_profile->manager_close_time)}}">
+                                  <label for="exampleInputEmail1">Restaurent's Phone</label>
+                                  <input type="text" class="form-control p-input" name="manager_restaurent_phone" value="{{($manager_description_profile->manager_restaurent_phone)}}">
                               </div>
                               <button type="submit" class="btn btn-success">Update</button>
                           </form>

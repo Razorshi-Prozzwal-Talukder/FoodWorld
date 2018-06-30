@@ -54,6 +54,10 @@
                       <i class="icon-globe icon">Restaurent Address:</i>
                       <span>{{ strtoupper($owner_description_profile->owner_restaurent_address) }}</span>
                     </a>
+                    <a class="website">
+                      <i class="icon-globe icon">Restaurent Phone Number:</i>
+                      <span>{{ strtoupper($owner_description_profile->owner_restaurent_phone) }}</span>
+                    </a>
                      <a class="website">
                       <i class="icon-globe icon">Restaurent Opening Time:</i>
                       <span>{{ strtoupper($owner_description_profile->owner_open_time) }}</span>
